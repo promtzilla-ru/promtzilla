@@ -176,14 +176,14 @@ const renderBreadcrumbs = (items = []) => `<nav class="breadcrumbs" aria-label="
 
 const siteHeader = (basePath = ".") => `<header class="site-header">
   <div class="site-header__inner">
-    <a class="site-brand" href="${basePath}/index.html" aria-label="ПРОМТЗИЛЛА">
+    <a class="site-brand" href="${basePath}/" aria-label="ПРОМТЗИЛЛА">
       <span class="site-brand__title">ПРОМТЗИЛЛА</span>
       <span class="site-brand__tagline">Библиотека промтов на все случаи жизни!</span>
     </a>
     <img class="site-mascot" src="${basePath}/images/site/promptzilla-mascot-ai-prompts-library.png" alt="Маскот ПРОМТЗИЛЛА за ноутбуком">
   </div>
   <nav class="site-nav" aria-label="Основная навигация">
-    <a href="${basePath}/index.html">Главная</a>
+    <a href="${basePath}/">Главная</a>
     <a href="${basePath}/${aboutSlug}/">О проекте</a>
   </nav>
 </header>`;
@@ -269,7 +269,7 @@ const renderRedirect = ({ title, to, basePath = "." }) => `<!doctype html>
 
 const renderPost = (post) => {
   const breadcrumbs = [
-    { name: "Главная", href: "../index.html", url: `${site.url}/` },
+    { name: "Главная", href: "../", url: `${site.url}/` },
     { name: breadcrumbTitle(post.title), href: "", url: `${site.url}/${postPath(post)}/` }
   ];
   const hasImportedHtml = Boolean(post.bodyHtml);
@@ -313,7 +313,7 @@ const renderIndex = (posts) =>
   <section class="grid">
     ${posts
       .map(
-        (post) => `<a class="card" href="${postPath(post)}/index.html">
+        (post) => `<a class="card" href="${postPath(post)}/">
       <img src="${assetUrl(post.image)}" alt="${escapeHtml(post.imageAlt)}">
       <span>${escapeHtml(post.category)}</span>
       <h2>${escapeHtml(post.title)}</h2>
@@ -354,7 +354,7 @@ await writeFile(path.join(distDir, aboutSlug, "index.html"), renderAbout(), "utf
 for (const post of posts) {
   await writeFile(
     path.join(distDir, "posts", `${post.slug}.html`),
-    renderRedirect({ title: post.title, to: `../${postPath(post)}/index.html`, basePath: ".." }),
+    renderRedirect({ title: post.title, to: `../${postPath(post)}/`, basePath: ".." }),
     "utf8"
   );
   await mkdir(path.join(distDir, postPath(post)), { recursive: true });
@@ -365,7 +365,7 @@ for (const [from, to] of Object.entries(legacyAliases)) {
   await mkdir(path.join(distDir, from), { recursive: true });
   await writeFile(
     path.join(distDir, from, "index.html"),
-    renderRedirect({ title: "Страница перемещена", to: `../${to}/index.html`, basePath: ".." }),
+    renderRedirect({ title: "Страница перемещена", to: `../${to}/`, basePath: ".." }),
     "utf8"
   );
 }
