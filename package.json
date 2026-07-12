@@ -1,0 +1,14 @@
+{
+  "name": "promptzilla-static",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze:posts": "node scripts/analyze-posts.mjs",
+    "build": "node scripts/build.mjs",
+    "check:breadcrumbs": "node scripts/check-breadcrumb-titles.mjs",
+    "check:links": "node scripts/check-dist-links.mjs",
+    "import:pages": "node scripts/import-pages.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}

@@ -1,0 +1,174 @@
+<style>
+.pz-wrap{max-width:780px;margin:0 auto;font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#1a1830}
+.pz-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b46fa;margin-bottom:10px}
+.pz-title{font-size:28px;font-weight:800;color:#1a1830;line-height:1.2;margin:0 0 12px}
+.pz-title span{background:linear-gradient(90deg,#6b46fa,#9b72ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pz-desc{color:#7b78a0;font-size:14px;max-width:560px;margin:0 0 32px}
+.pz-section{margin-bottom:32px}
+.pz-section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7b78a0;margin:0 0 16px;display:flex;align-items:center;gap:8px}
+.pz-section-label::after{content:'';flex:1;height:1px;background:#e0e0ec}
+.pz-card{background:#f7f7fb;border:1px solid #e0e0ec;border-radius:12px;overflow:hidden;margin-bottom:20px}
+.pz-card-head{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#eeeef6;border-bottom:1px solid #e0e0ec;flex-wrap:wrap}
+.pz-card-meta{font-size:12px;color:#7b78a0;margin-left:auto}
+.pz-card-body{padding:15px 16px;font-family:'Courier New',monospace;font-size:13px;line-height:1.7;color:#2d2a4a;white-space:pre-wrap;word-break:break-word;background:#fafafa;margin:0}
+.pz-ru{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(217,48,37,.08);color:#d93025;border:1px solid rgba(217,48,37,.2)}
+.pz-en{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(26,115,232,.08);color:#1a73e8;border:1px solid rgba(26,115,232,.2)}
+.pz-copy{background:#f0edff;border:1px solid #cfc4ff;color:#6b46fa;font-size:12px;font-weight:600;padding:5px 12px;border-radius:6px;cursor:pointer;font-family:inherit;margin-left:auto;transition:all .15s}
+.pz-copy:hover{background:#6b46fa;color:#fff;border-color:#6b46fa}
+.pz-copy.ok{background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7}
+.pz-photo-stack{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 24px}
+.pz-photo-item{background:#fff;border:1px solid #e0e0ec;border-radius:10px;overflow:hidden}
+.pz-photo-img{width:100%;aspect-ratio:3/4;overflow:hidden}
+.pz-photo-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pz-photo-cap{padding:8px 12px;border-top:1px solid #e0e0ec;font-size:12px;color:#7b78a0;display:flex;align-items:center;gap:6px}
+.pz-badge-input{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
+.pz-badge-result{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.pz-howto{background:linear-gradient(135deg,rgba(107,70,250,.05),rgba(155,114,255,.03));border:1px solid rgba(107,70,250,.18);border-radius:12px;padding:22px;margin-bottom:32px}
+.pz-howto-title{font-size:14px;font-weight:700;color:#6b46fa;margin:0 0 16px}
+.pz-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.pz-step{display:flex;gap:12px;align-items:flex-start}
+.pz-step-num{width:24px;height:24px;background:#6b46fa;color:#fff;font-size:11px;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pz-step-text{font-size:14px;color:#1a1830;line-height:1.5}
+.pz-wrap strong{color:inherit}
+.pz-wrap a{color:inherit;text-decoration:none}
+.pz-wrap a:hover{text-decoration:underline}
+.pz-divider{height:1px;background:#e0e0ec;margin:28px 0}
+.pz-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pz-tag{background:#f0edff;border:1px solid #cfc4ff;color:#6b46fa;font-size:12px;font-weight:600;padding:5px 13px;border-radius:20px}
+</style>
+
+<div class="pz-wrap">
+
+  <div class="pz-eyebrow">Промтзилла</div>
+  <h2 class="pz-title">Типаж по Кибби<br><span>с помощью нейросети</span></h2>
+  <p class="pz-desc">Загрузи фото в полный рост — GPT Image 2 определит твой типаж из 13 по системе Кибби и создаст инфографику с рекомендациями по стилю, тканям и украшениям.</p>
+
+  <div class="pz-howto">
+    <div class="pz-howto-title">📋 Пошаговая инструкция</div>
+    <ul class="pz-steps">
+      <li class="pz-step"><div class="pz-step-num">1</div><div class="pz-step-text">Подготовь фото в <strong>полный рост или по пояс</strong> — нейтральный фон, обтягивающая или облегающая одежда, хорошее освещение</div></li>
+      <li class="pz-step"><div class="pz-step-num">2</div><div class="pz-step-text">Перейди на <strong>study24.ai</strong>, открой <strong>GPT Image 2</strong> и загрузи фото</div></li>
+      <li class="pz-step"><div class="pz-step-num">3</div><div class="pz-step-text">Скопируй промт ниже и <strong>вставь в поле ввода</strong></div></li>
+      <li class="pz-step"><div class="pz-step-num">4</div><div class="pz-step-text">Нажми отправить — через 20–30 секунд получишь <strong>инфографику с типажом и рекомендациями</strong></div></li>
+      <li class="pz-step"><div class="pz-step-num">5</div><div class="pz-step-text">Если хочешь уточнить — добавь к промту: <strong>«объясни подробнее почему именно этот типаж»</strong></div></li>
+      <li class="pz-step"><div class="pz-step-num">6</div><div class="pz-step-text">Скачай инфографику и <strong>используй как гайд по стилю</strong></div></li>
+    </ul>
+  </div>
+
+  <!-- ФОТО -->
+  <div class="pz-section">
+    <div class="pz-section-label">Пример результата</div>
+    <div class="pz-photo-stack">
+      <div class="pz-photo-item">
+        <div class="pz-photo-img"><img src="https://promtzilla.ru/wp-content/uploads/2026/07/Как-Узнать-Свой-Типаж-По-Кибби-По-Фото-С-Помощью-ИИ.png" alt="Исходное фото"></div>
+        <div class="pz-photo-cap"><span class="pz-badge-input">Вход</span>Исходное фото</div>
+      </div>
+      <div class="pz-photo-item">
+        <div class="pz-photo-img"><img src="https://promtzilla.ru/wp-content/uploads/2026/07/Как-Узнать-Свой-Типаж-По-Кибби-По-Фото-С-Помощью-ИИ-Инфорграфика.png" alt="Инфографика с типажом"></div>
+        <div class="pz-photo-cap"><span class="pz-badge-result">Результат</span>Инфографика с типажом и рекомендациями</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПРОМТЫ -->
+  <div class="pz-section">
+    <div class="pz-section-label">Промт</div>
+
+    <div class="pz-card">
+      <div class="pz-card-head">
+        <span class="pz-ru">RU</span>
+        <span class="pz-card-meta">GPT Image 2 · фото в полный рост или по пояс</span>
+        <button class="pz-copy" onclick="pzCopy(this)">Копировать</button>
+      </div>
+      <pre class="pz-card-body">Загружаю своё фото в полный рост или по пояс. Определи мой типаж по системе Кибби и создай красивую инфографику с результатом и рекомендациями по стилю.
+
+Шаг 1 — определи типаж по Кибби:
+— Проанализируй строение тела: рост, пропорции плеч, талии и бёдер, длину конечностей
+— Проанализируй черты лица: острые (ян) или мягкие (инь), крупные или мелкие, угловатые или округлые
+— Определи соотношение ян и инь во внешности в целом
+— Назови типаж из 13 возможных: Драматик, Софт Драматик, Флэмбоянт Натурал, Натурал, Софт Натурал, Классик, Драматик Классик, Софт Классик, Флэмбоянт Гамин, Гамин, Софт Гамин, Романтик, Театральный Романтик
+— Кратко объясни почему — какие конкретные черты привели к этому выводу
+
+Шаг 2 — рекомендации по стилю:
+— Силуэт и крой одежды: какие линии и формы гармонируют с этим типажом
+— Ткани и фактуры: мягкие или структурированные, лёгкие или плотные
+— Принты и узоры: крупные или мелкие, геометрия или флораль
+— Длины: оптимальная длина юбок, платьев, жакетов
+— Украшения: крупные или деликатные, геометричные или округлые
+— Причёска: объём, длина, текстура
+
+Как оформить инфографику:
+— Весь текст только на русском языке, чёткая типографика
+— Структура: «Типаж по Кибби: [название]» крупно вверху → «Почему» → «Рекомендации по стилю»
+— Тон дружелюбный и позитивный, без критики внешности
+— Добавь дисклеймер: типирование по Кибби является субъективным методом, финальное решение всегда за вами
+— Не делай медицинских или возрастных оценок</pre>
+    </div>
+
+    <div class="pz-card">
+      <div class="pz-card-head">
+        <span class="pz-en">EN</span>
+        <span class="pz-card-meta">GPT Image 2 · full-length or waist-up photo</span>
+        <button class="pz-copy" onclick="pzCopy(this)">Копировать</button>
+      </div>
+      <pre class="pz-card-body">I'm uploading a full-length or waist-up photo of myself. Determine my Kibbe type and create a beautiful infographic with the result and style recommendations.
+
+Step 1 — determine Kibbe type:
+— Analyze body structure: height, shoulder-waist-hip proportions, limb length
+— Analyze facial features: sharp (yang) or soft (yin), large or delicate, angular or rounded
+— Determine the overall yang-yin balance in the appearance
+— Name the type from 13 options: Dramatic, Soft Dramatic, Flamboyant Natural, Natural, Soft Natural, Classic, Dramatic Classic, Soft Classic, Flamboyant Gamine, Gamine, Soft Gamine, Romantic, Theatrical Romantic
+— Brief explanation — which specific features led to this conclusion
+
+Step 2 — style recommendations:
+— Silhouette and cut: which lines and shapes harmonize with this type
+— Fabrics and textures: soft or structured, light or heavy
+— Prints and patterns: bold or delicate, geometric or floral
+— Lengths: optimal length for skirts, dresses, jackets
+— Jewelry: statement or delicate, geometric or rounded
+— Hairstyle: volume, length, texture
+
+How to design the infographic:
+— All text in Russian only, clear typography
+— Structure: "Kibbe type: [name]" large at top → "Why" → "Style recommendations"
+— Friendly and positive tone, no criticism of appearance
+— Add disclaimer: Kibbe typing is a subjective method, the final decision is always yours
+— Do not make medical or age-related assessments</pre>
+    </div>
+  </div>
+
+  <div class="pz-divider"></div>
+
+  <div class="pz-section">
+    <div class="pz-section-label">Теги</div>
+    <div class="pz-tags">
+      <span class="pz-tag">#типаж по Кибби нейросеть</span>
+      <span class="pz-tag">#Кибби ИИ определить типаж</span>
+      <span class="pz-tag">#GPT Image 2 Кибби</span>
+      <span class="pz-tag">#система Кибби онлайн</span>
+      <span class="pz-tag">#определить типаж по фото ИИ</span>
+      <span class="pz-tag">#Кибби типажи инфографика</span>
+      <span class="pz-tag">#стиль по Кибби нейросеть</span>
+      <span class="pz-tag">#типаж внешности ИИ</span>
+      <span class="pz-tag">#промт типаж Кибби</span>
+      <span class="pz-tag">#Kibbe type AI</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function pzCopy(btn) {
+  var card = btn.closest('.pz-card, .pz-mini');
+  var body = card.querySelector('.pz-card-body, .pz-mini-body');
+  if (!body) return;
+  navigator.clipboard.writeText(body.innerText).then(function() {
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('ok');
+    setTimeout(function() {
+      btn.textContent = 'Копировать';
+      btn.classList.remove('ok');
+    }, 2000);
+  });
+}
+</script>
