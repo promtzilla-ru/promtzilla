@@ -75,6 +75,31 @@ const localizeBodyUrls = (html = "", basePath = ".") =>
     .replaceAll('src="/', `src="${basePath}/`)
     .replaceAll("src='/", `src='${basePath}/`);
 
+const sitemapXml = (posts) => {
+  const urls = [
+    { loc: `${site.url}/`, priority: "1.0" },
+    { loc: `${site.url}/${aboutSlug}/`, priority: "0.5" },
+    ...posts.map((post) => ({
+      loc: `${site.url}/${postPath(post)}/`,
+      lastmod: post.date,
+      priority: "0.8"
+    }))
+  ];
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (url) => `  <url>
+    <loc>${url.loc}</loc>${url.lastmod ? `\n    <lastmod>${url.lastmod}</lastmod>` : ""}
+    <priority>${url.priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+};
+
 const breadcrumbJsonLd = (items = []) =>
   JSON.stringify({
     "@context": "https://schema.org",
@@ -350,6 +375,7 @@ const posts = await readPosts();
 await writeFile(path.join(distDir, "index.html"), renderIndex(posts), "utf8");
 await mkdir(path.join(distDir, aboutSlug), { recursive: true });
 await writeFile(path.join(distDir, aboutSlug, "index.html"), renderAbout(), "utf8");
+await writeFile(path.join(distDir, "sitemap.xml"), sitemapXml(posts), "utf8");
 
 for (const post of posts) {
   await writeFile(
