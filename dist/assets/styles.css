@@ -183,7 +183,9 @@ a {
 .card img {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
+  background: linear-gradient(135deg, #fbf4e8, #eef7f7);
+  border: 1px solid rgba(217, 226, 227, 0.8);
   border-radius: 6px;
 }
 
@@ -403,4 +405,26 @@ a {
 .article .pz-result,
 .article .pz-video-wrap {
   max-width: none;
+}
+
+/* Article examples must show the whole generated image, not a center crop. */
+.article .pz-photo-img,
+.article .pz-source-img,
+.article .pz-ba-img,
+.article .pz-ba-crop {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+}
+
+.article .pz-photo-img img,
+.article .pz-source-img img,
+.article .pz-ba-img img,
+.article .pz-ba-crop img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
+  display: block !important;
 }

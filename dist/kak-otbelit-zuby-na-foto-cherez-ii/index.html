@@ -55,6 +55,10 @@
 .pz-copy:hover{background:#0f7c80;color:#fff;border-color:#0f7c80}
 .pz-copy.ok{background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7}
 .pz-photo-stack{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 24px}
+.pz-ba-stack{display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px}
+.pz-ba-crop{width:100%;aspect-ratio:1.58/1;overflow:hidden;background:#f3f7f7}
+.pz-ba-crop img{width:200%;height:100%;object-fit:cover;display:block;max-width:none}
+.pz-ba-crop-after img{transform:translateX(-50%)}
 .pz-photo-item{background:#fff;border:1px solid #d9e2e3;border-radius:8px;overflow:hidden}
 .pz-photo-img{width:100%;overflow:hidden}
 .pz-photo-img img{width:100%;display:block}
@@ -74,7 +78,7 @@
 <div class="pz-wrap">
 
   <div class="pz-eyebrow">Промтзилла</div>
-  <h2 class="pz-title">Как отбелить зубы на фото<br><span>через ИИ</span></h2>
+  <h2 class="pz-title">Как отбелить зубы на фото через ИИ</h2>
   <p class="pz-desc">Загрузи портрет с улыбкой — GPT Image 2 или Nano Banana PRO мягко осветлит зубы, уберёт желтизну и сохранит естественный вид без пластиковой белизны.</p>
 
   <div class="pz-howto">
@@ -91,10 +95,14 @@
 
   <div class="pz-section">
     <div class="pz-section-label">Пример результата</div>
-    <div class="pz-photo-stack">
+    <div class="pz-ba-stack">
       <div class="pz-photo-item">
-        <div class="pz-photo-img"><img src="../wp-content/uploads/2026/07/kak-otbelit-zuby-na-foto-cherez-ii.png" alt="До и после отбеливания зубов на фото через ИИ"></div>
-        <div class="pz-photo-cap"><span class="pz-badge-result">До / после</span>Естественное осветление зубов без изменения улыбки</div>
+        <div class="pz-ba-crop pz-ba-crop-before"><img src="../wp-content/uploads/2026/07/kak-otbelit-zuby-na-foto-cherez-ii.png" alt="До и после отбеливания зубов на фото через ИИ — до"></div>
+        <div class="pz-photo-cap"><span class="pz-badge-result">До</span>Исходное фото до обработки.</div>
+      </div>
+      <div class="pz-photo-item">
+        <div class="pz-ba-crop pz-ba-crop-after"><img src="../wp-content/uploads/2026/07/kak-otbelit-zuby-na-foto-cherez-ii.png" alt="До и после отбеливания зубов на фото через ИИ — после"></div>
+        <div class="pz-photo-cap"><span class="pz-badge-result">После</span>Естественное осветление зубов без изменения улыбки</div>
       </div>
     </div>
   </div>

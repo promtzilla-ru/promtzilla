@@ -367,7 +367,7 @@ const renderAbout = () =>
   });
 
 await mkdir(path.join(distDir, "posts"), { recursive: true });
-await cp(publicDir, distDir, { recursive: true, force: false, errorOnExist: false });
+await cp(publicDir, distDir, { recursive: true, force: true });
 await mkdir(path.join(distDir, "assets"), { recursive: true });
 await cp(path.join(publicDir, "assets", "styles.css"), path.join(distDir, "assets", "styles.css"), { force: true });
 
