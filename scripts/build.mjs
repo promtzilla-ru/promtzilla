@@ -223,6 +223,9 @@ const layout = ({ title, description, image, body, basePath = ".", structuredDat
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:image" content="${absoluteUrl(image)}">
+  <link rel="icon" href="${basePath}/favicon.ico" sizes="any">
+  <link rel="icon" href="${basePath}/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="${basePath}/favicon.png">
   <link rel="stylesheet" href="${basePath}/assets/styles.css">
   ${structuredData.map((data) => `<script type="application/ld+json">${data}</script>`).join("\n  ")}
 </head>
