@@ -117,6 +117,24 @@ a {
   font-weight: 700;
 }
 
+/* Content links stay visible even when a post contains legacy inline CSS. */
+.article .pz-wrap a:not(.pz-copy) {
+  color: var(--teal) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.article .pz-wrap a:not(.pz-copy):hover,
+.article .pz-wrap a:not(.pz-copy):focus-visible {
+  color: var(--coral) !important;
+}
+
+.article .pz-wrap a[rel~="sponsored"] {
+  font-weight: 700;
+}
+
 .home,
 .article {
   width: min(1120px, calc(100% - 32px));
