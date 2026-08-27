@@ -213,6 +213,10 @@ const siteHeader = (basePath = ".") => `<header class="site-header">
   </nav>
 </header>`;
 
+const siteFooter = () => `<footer class="site-footer">
+  <div class="site-footer__inner"><em>Сведения о рекламодателе: ООО "Диджитал Гениус". ИНН 7813681158</em></div>
+</footer>`;
+
 const layout = ({ title, description, image, body, basePath = ".", structuredData = [] }) => `<!doctype html>
 <html lang="ru">
 <head>
@@ -232,6 +236,7 @@ const layout = ({ title, description, image, body, basePath = ".", structuredDat
 <body>
   ${siteHeader(basePath)}
   ${body}
+  ${siteFooter()}
 </body>
 </html>`;
 
@@ -292,6 +297,7 @@ const renderRedirect = ({ title, to, basePath = "." }) => `<!doctype html>
   <main class="article">
     <p class="lead"><a href="${to}">Открыть каноническую страницу</a></p>
   </main>
+  ${siteFooter()}
 </body>
 </html>`;
 

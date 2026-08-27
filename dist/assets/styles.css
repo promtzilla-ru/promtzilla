@@ -91,6 +91,20 @@ a {
   color: #fff;
 }
 
+.site-footer {
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+  background: #eef4f3;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.site-footer__inner {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 20px 0 24px;
+}
+
 .breadcrumbs {
   margin: 0 0 26px;
   color: var(--muted);
