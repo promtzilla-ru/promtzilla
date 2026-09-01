@@ -307,6 +307,7 @@ const renderPost = (post) => {
     { name: breadcrumbTitle(post.title), href: "", url: `${site.url}/${postPath(post)}/` }
   ];
   const hasImportedHtml = Boolean(post.bodyHtml);
+  const needsGeneratedHeader = hasImportedHtml && String(post.image || "").startsWith("/images/posts/");
   const structuredData = [breadcrumbJsonLd(breadcrumbs), howToJsonLd(post), techArticleJsonLd(post)].filter(Boolean);
 
   return layout({
@@ -318,12 +319,12 @@ const renderPost = (post) => {
     body: `<main class="article">
   ${renderBreadcrumbs(breadcrumbs)}
   ${
-    hasImportedHtml
+    hasImportedHtml && !needsGeneratedHeader
       ? ""
       : `<p class="eyebrow">${escapeHtml(post.category)} · ${escapeHtml(post.date)}</p>
   <h1>${escapeHtml(post.title)}</h1>
   <p class="lead">${escapeHtml(post.description)}</p>
-  <img class="cover" src="${assetUrl(post.image, "..")}" alt="${escapeHtml(post.imageAlt)}">`
+  ${needsGeneratedHeader ? "" : `<img class="cover" src="${assetUrl(post.image, "..")}" alt="${escapeHtml(post.imageAlt)}">`}`
   }
   <article class="content">
     ${post.bodyHtml ? localizeBodyUrls(post.bodyHtml, "..") : markdownToHtml(post.body)}
